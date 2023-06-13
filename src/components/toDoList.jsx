@@ -27,7 +27,15 @@ function TodoList() {
       <input type="text" value={inputValue} onChange={handleInputChange} />
       <button onClick={handleAddItem}>Add</button>
       
-
+  {errorMessage && <p>{errorMessage}</p>}
+      <ul>
+        {items.map((item, index) => (
+          <li key={index}>
+            {item}
+            <button onClick={() => handleDeleteItem(index)}>Delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
