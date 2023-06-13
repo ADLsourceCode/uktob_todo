@@ -20,6 +20,12 @@ function TodoList() {
     }
   };
 
+  const handleDeleteItem = (index) => {
+    const updatedItems = items.filter((_, i) => i !== index);
+    setItems(updatedItems);
+  };
+
+
   
   return (
     <div>
